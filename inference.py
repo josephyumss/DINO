@@ -8,7 +8,7 @@ from PIL import Image
 import cv2
 import time
 
-INFERENCE_EACH = True
+INFERENCE_EACH = False
 
 if not INFERENCE_EACH:
     img_path = r"sample_data"
