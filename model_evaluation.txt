@@ -1,6 +1,13 @@
+# train & test
 Accuracy: 0.9841
 F1-score: 0.9804
 Recall : 0.9804
 Confusion Matrix:
 [[222   3]
  [  3 150]]
+
+# Inference
+Total Inference : 0:0:39.52 (39517.26 ms) Done
+- Loading DINO : 0:0:16.20 (16199.50 ms) Done
+- DINO extracting features : 0:0:23.29 (23293.71 ms) Done
+- Logistic Regrssion Classification : 0:0:0.00 (0.79 ms) Done
