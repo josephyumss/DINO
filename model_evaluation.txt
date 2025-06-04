@@ -7,7 +7,14 @@ Confusion Matrix:
  [  3 150]]
 
 # Inference
+10 image
 Total Inference : 0:0:39.52 (39517.26 ms) Done
 - Loading DINO : 0:0:16.20 (16199.50 ms) Done
 - DINO extracting features : 0:0:23.29 (23293.71 ms) Done
 - Logistic Regrssion Classification : 0:0:0.00 (0.79 ms) Done
+
+1 image (average)
+Individual Inference (average) : 0.0:0.0:23.46 (23458.88 ms) Done
+ - Loading DINO : 0:0:20.61 (20613.59 ms) Done
+ - (average) DINO extracting features : 0.0:0.0:2.86 (2857.48 ms) Done
+ - (average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.27 ms) Done
