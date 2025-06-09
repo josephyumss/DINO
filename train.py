@@ -27,6 +27,7 @@ def extract_feature(img_path, model, device): # device variable only for read, s
             feature = feature_dict['x_norm_clstoken']
         return feature.squeeze(0).cpu().numpy() # shape : (feature_dim,). Because of torch.no_grad(), no need to .detach()
 
+# Regression
 class LogisticRegression(nn.Module):
     def __init__(self,feature_dim):
         super().__init__()
