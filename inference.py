@@ -10,7 +10,7 @@ import time
 
 from vision_transformer import VisionTransformer
 
-INFERENCE_EACH = False
+INFERENCE_EACH = True
 
 if not INFERENCE_EACH:
     img_path = r"sample_data"
@@ -96,22 +96,22 @@ if not INFERENCE_EACH:
 
     x = torch.tensor(x, dtype=torch.float32)
     print(x.shape)
-    label = [1,1,1,1,1,0,0,0,0,0]
+    label = [0,0,0,0,0,1,1,1,1,1]
 
     classifier = LogisticRegression(x.shape[-1])
 
     if device == 'cpu':
-        weights = torch.load('classifier_weights.pth',map_location=torch.device('cpu'))
+        weights = torch.load('version_gr_classifier_weights.pth',map_location=torch.device('cpu'))
         classifier.load_state_dict(weights)
     else :
-        classifier.load_state_dict(torch.load('classifier_weights.pth'))
+        classifier.load_state_dict(torch.load('version_gr_classifier_weights.pth'))
 
     classifier.eval()
-
-    time_tic_log = time.time()
-    pred = classifier(x).detach().numpy()
-    pred_class = (pred>0.5).astype(int)
-    time_toc_log = time.time()
+    with torch.no_grad():
+        time_tic_log = time.time()
+        pred = classifier(x).detach().numpy()
+        pred_class = np.argmax(pred, axis=1)
+        time_toc_log = time.time()
 
     hour = int((time_toc_log-time_tic_log)//3600)
     mint = int(((time_toc_log-time_tic_log)%3600)//60)
@@ -153,10 +153,10 @@ else:
     avg_extfeat = {"hour" : [], "min" : [], "sec" : [], "tic-toc" : []}
     avg_log = {"hour" : [], "min" : [], "sec" : [], "tic-toc" : []}
     
-    label = [1,1,1,1,1,0,0,0,0,0]
+    label = [0,0,0,0,0,1,1,1,1,1]
 
     time_tic_load = time.time()
-    DINO = torch.hub.load('facebookresearch/dinov2', 'dinov2_vitg14_reg').to(device)
+    DINO = torch.hub.load('facebookresearch/dinov2', 'dinov2_vits14_reg').to(device)
     time_toc_load = time.time()
     DINO.eval()
     
@@ -196,17 +196,17 @@ else:
         classifier = LogisticRegression(x.shape[-1])
 
         if device == 'cpu':
-            weights = torch.load('classifier_weights.pth',map_location=torch.device('cpu'))
+            weights = torch.load('version_sr_classifier_weights.pth',map_location=torch.device('cpu'))
             classifier.load_state_dict(weights)
         else :
-            classifier.load_state_dict(torch.load('classifier_weights.pth'))
+            classifier.load_state_dict(torch.load('version_sr_classifier_weights.pth'))
 
         classifier.eval()
-
-        time_tic_log = time.time()
-        pred = classifier(x).detach().numpy()
-        pred_class = (pred>0.5).astype(int)
-        time_toc_log = time.time()
+        with torch.no_grad():
+            time_tic_log = time.time()
+            pred = classifier(x).detach().numpy()
+            pred_class = np.argmax(pred,axis=1)
+            time_toc_log = time.time()
 
         print(f"label : {label[idx]} / prediction : {pred_class[0]}")
 

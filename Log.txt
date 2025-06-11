@@ -1,0 +1,55 @@
+Model : vits14r
+Total training taked : 3 min 11.82530 sec
+Feature extracting taked : 3 min 10.56444 sec
+Accuracy : 0.8966
+F1-score : 0.8410
+Recall : 0.8095
+Confusion Matrix:
+[[271  17]
+ [ 28 119]]
+
+Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.04 (40.09 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.10 ms) Done
+
+Model : vitb14r
+Total training taked : 5 min 59.11574 sec
+Feature extracting taked : 5 min 57.41230 sec
+Accuracy : 0.8989
+F1-score : 0.8472
+Recall : 0.8299
+Confusion Matrix:
+[[269  19]
+ [ 25 122]]
+
+Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.06 (58.94 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.10 ms) Done
+
+Model : vitl14r
+Total training taked : 12 min 16.95263 sec
+Feature extracting taked : 12 min 15.20312 sec
+Accuracy : 0.8828
+F1-score : 0.8211
+Recall : 0.7959
+Confusion Matrix:
+[[267  21]
+ [ 30 117]]
+
+ Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.10 (103.12 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.10 ms) Done
+
+Model : vitg14r
+Total training taked : 145 min 29.97906 sec
+Feature extracting taked : 145 min 3.92707 sec
+Accuracy : 0.8759
+F1-score : 0.8071
+Recall : 0.7687
+Confusion Matrix:
+[[268  20]
+ [ 34 113]]
+
+Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.56 (560.46 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.60 ms) Done
