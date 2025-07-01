@@ -26,7 +26,6 @@ if not INFERENCE_EACH:
     # Bounding Box
     #Vit = VisionTransformer().to(device)
 
-
     hour = int((time_toc_load-time_tic_load)//3600)
     mint = int(((time_toc_load-time_tic_load)%3600)//60)
     sec = (time_toc_load-time_tic_load)%60 
@@ -195,7 +194,7 @@ else:
 
         classifier = LogisticRegression(x.shape[-1])
 
-        if device == 'cpu':
+        if device == torch.device('cpu'):
             weights = torch.load('version_sr_classifier_weights.pth',map_location=torch.device('cpu'))
             classifier.load_state_dict(weights)
         else :

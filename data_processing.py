@@ -1,14 +1,13 @@
 import os
 import shutil
 
-imgs_path = r'F:\dataset\YOLO11_fire_dataset\test\images'
-label_path = r'F:\dataset\YOLO11_fire_dataset\test\labels'
-output_path = r'F:\dataset\YOLO11_fire_dataset\test\sorted'
+imgs_path = r'C:\Users\User\dataset\roboflow_dataset\test\images'
+label_path = r'C:\Users\User\dataset\roboflow_dataset\test\labels'
+output_path = r'C:\Users\User\dataset\roboflow_dataset\test\sorted'
 
 class_names = {
     0: 'fire',
-    1: 'smoke',
-    2: 'none'
+    1: 'smoke'
 }
 
 for cname in class_names.values():

@@ -1,20 +1,31 @@
-# train & test
-Accuracy: 0.9841
-F1-score: 0.9804
-Recall : 0.9804
+-------------------------------------------------------------------------
+Model : vits14r
+Feature extracting taked : 3 min 10.56444 sec
+
+Accuracy : 0.8966
+F1-score : 0.8410
+Recall : 0.8095
+
 Confusion Matrix:
-[[222   3]
- [  3 150]]
+[[271  17]
+ [ 28 119]]
 
-# Inference
-10 image
-Total Inference : 0:0:39.52 (39517.26 ms) Done
-- Loading DINO : 0:0:16.20 (16199.50 ms) Done
-- DINO extracting features : 0:0:23.29 (23293.71 ms) Done
-- Logistic Regrssion Classification : 0:0:0.00 (0.79 ms) Done
+Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.04 (40.09 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.10 ms) Done
 
-1 image (average)
-Individual Inference (average) : 0.0:0.0:23.46 (23458.88 ms) Done
- - Loading DINO : 0:0:20.61 (20613.59 ms) Done
- - (average) DINO extracting features : 0.0:0.0:2.86 (2857.48 ms) Done
- - (average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.27 ms) Done
+-------------------------------------------------------------------------
+Model : vitb14r
+Feature extracting taked : 5 min 57.41230 sec
+
+Accuracy : 0.8989
+F1-score : 0.8472
+Recall : 0.8299
+
+Confusion Matrix:
+[[269  19]
+ [ 25 122]]
+
+Inference(1 image) :
+(average) DINO extracting features : 0.0:0.0:0.06 (58.94 ms) Done
+(average) Logistic Regrssion Classification : 0.0:0.0:0.00 (0.10 ms) Done
